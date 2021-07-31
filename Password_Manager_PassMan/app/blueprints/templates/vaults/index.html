@@ -1,0 +1,16 @@
+{% extends "layouts/main.html" %}
+{% block title %}Vaults{% endblock %}
+{% from "shared/navigation.html" import navigation with context %}
+{% block content %}
+{{ navigation('Vaults', user) }}
+
+<div class="vaults-list">
+    {% for vault in vaults %}
+        <div class="vault" onclick="location.href='/vaults/{{vault.id}}/items';">
+            <div class="vault-title">{{vault.title}}</div>
+            <div>{{vault.description}}</div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

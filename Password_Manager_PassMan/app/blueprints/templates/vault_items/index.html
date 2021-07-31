@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+{% block title %}Vault{% endblock %}
+{% from "shared/navigation.html" import navigation with context %}
+{% block content %}
+
+<h1>Vault</h1>
+<div class="hcontainer" style="justify-content: space-between; padding-top: 0.5rem;">
+    <div class="hcontainer">
+        <input type="button" value="&plus; Add Item"
+            onclick="location.href='/vaults/{{vault_id}}/items/0';"/>
+    </div>
+    <div class="hcontainer">
+        <div>Logged in as <b>{{user.username}}</b> |</div>
+        <input class="logout-btn" type="button" value="Log out" onclick="location.href='/sessions/delete';"/>
+    </div>
+</div>
+
+<div class="vault-items-list">
+    {% for item in items %}
+        <div class="hcontainer">
+            <div class="vault-item" style="flex-grow: 1;" onclick="location.href='/vaults/{{vault_id}}/items/{{item.id}}';">
+                <div class="vault-item-title">{% if item.title %}{{item.title}}{% else %}Untitled{% endif %}</div>
+                <div>{% if item.username %}{{item.username}}{% else %}(no username){% endif %}</div>
+            </div>
+            <form action="/vaults/{{vault_id}}/items/{{item.id}}/delete" method="POST"
+                onsubmit="return confirm('Really delete item?');">
+                <input class="logout-btn delete-button" type="submit" value="&#10006;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+{% if items|length == 0 %}
+<div style="margin-top: 3rem;">
+    <h4>Your vault is empty.</h4>
+    <div>Click the <b>Add Item</b> button above to create a new item.</div>
+</div>
+{% endif %}
+
+{% endblock %}
