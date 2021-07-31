@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+
+<h1>PassMan</h1>
+<p>Welcome to PassMan! The secure, clean password manager.</p>
+<h3>Create your account</h3>
+<form action="signup" method="POST">
+    <label for="username">Username</label><br>
+    <input type="text" id="username" name="username" value=""><br>
+    <br>
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password" value=""><br>
+    <br>
+    <input type="submit" value="Sign Up">
+</form>
+<br><br>
+<p>Already have an account? <a href="login">Click here</a> to log in.</p>
+
+{% endblock %}
