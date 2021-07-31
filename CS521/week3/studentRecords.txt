@@ -1,0 +1,4 @@
+Tyrion Lannister, 754367, 3.7
+Daenerys Targaryen, 754368, 2.8
+Jon Snow, 754369, 3.9
+Sansa Stark, 754370, 3.4
