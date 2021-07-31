@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+		<title>class schedule</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<script>
+			(function(a,h,g,f,e,d,c,b){
+				b=function(){
+					d=h.createElement(g);
+					c=h.getElementsByTagName(g)[0];
+					d.src=e;d.charset="utf-8";
+					d.async=1;c.parentNode.insertBefore(d,c)};
+					a["SeniverseWeatherWidgetObject"]=f;
+					a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});
+					a[f].l=+new Date();
+					if(a.attachEvent){
+						a.attachEvent("onload",b)
+					}
+					else{
+						a.addEventListener("load",b,false)
+					}
+				}
+				(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+			window.SeniverseWeatherWidget('show', {
+				flavor: "bubble",
+				location: "shanghai",
+				geolocation: true,
+				language: "en",
+				unit: "f",
+				theme: "dark",
+				token: "710336ea-c763-41a9-8dbe-66641ba478f8",
+				hover: "enabled",
+				container: "tp-weather-widget"
+			});
+		</script>
+		<div id="tp-weather-widget"></div>
+			
+		<article>
+			Recommend to use in Landscape mode
+		</article>
+		<!--标题-->
+		<h1>class schedule</h1>
+		<!--日期-->
+		<h2></h2>
+		<!--课程表-->
+		<div id="tablep"></div>
+
+		<!--ip地址-->
+		<footer>
+			<div>
+				<p id="ip"></p>
+			</div>
+			<div>
+				<p id="temp"></p>
+				<input type="button" id="ReTemp" value="Update temp" />
+			</div>
+			<div>
+				<p id="time"></p>
+				<input type="button" id="ReTime" value="Update time" />
+			</div>
+		</footer>
+
+	</body>
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/tables.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		//加载事件，动态加载课程表
+		window.onload = function() {
+			var tb = new TimeTable({
+				el: "#tablep"
+			})
+			console.log(tb)
+		}
+	</script>
+	<script>
+		$(function() {
+			GetIp();
+			GetTemp();
+			GetTime();
+			function GetIp(){
+				$.getJSON('https://api.ipify.org?format=json', function(data) {
+					$("body footer #ip").text(data.ip);
+				});
+			}
+			function GetTemp(){
+				$.getJSON('https://api.openweathermap.org/data/2.5/weather?q=boston&units=imperial&appid=Bd3c09170b383b37f32469483fb7ddaa',
+					function(data) {
+						$("body footer #temp").text(data.main.temp);
+					});
+			}
+			function GetTime(){
+				$.getJSON('http://quan.suning.com/getSysTime.do',
+					function(data) {
+						$("body footer #time").text(data.sysTime2);
+					});
+			}
+			$("#ReTemp").click(function(){
+				GetTemp();
+			});
+			$("#ReTime").click(function(){
+				GetTime();
+			});
+			/*
+			 *获取当前时间
+			 * 
+			 */
+			var myDate = new Date;
+			var year = myDate.getFullYear(); //获取当前年
+			var mon = myDate.getMonth() + 1; //获取当前月
+			var date = myDate.getDate(); //获取当前日
+			var h = myDate.getHours(); //获取当前小时数(0-23)
+			var week = myDate.getDay(); //获取星期
+			var weeks = ["Sunday ", " Monday ", "Tuesday ", " Wednesday ", "Thursday ", " Friday ", "Saturday"];
+			console.log(year, mon, date, weeks[week])
+			//根据小时，判断是上午、下午
+			var h_Str = "";
+			if (h >= 12) {
+				h_Str = h + "PM"
+			} else {
+				h_Str = h + "AM"
+			}
+			$("body h2").html(mon + "/" + date + "  " + weeks[week] + " " + h_Str);
+		});
+	</script>
+</html>

@@ -1,0 +1,239 @@
+/*统一外边距内边距*/
+* {
+	padding: 0px;
+	margin: 0px;
+}
+/*页面背景颜色*/
+body{
+	background: rgb(249,235,174);
+}
+
+/*标题样式*/
+h1{
+	padding-top: 50px;
+	text-align: center;
+	font-size: 46px;
+	font-weight: 900;
+}
+/*时间样式*/
+h2{
+	text-align: right;
+	padding-right: 100px;
+}
+/*ip地址样式*/
+footer{
+	text-align: center;
+	font-size: 24px;
+}
+
+/**
+ *	设置表格宽度，位置 
+ */
+#tp-weather-widget > *{
+	z-index: 100;
+}
+#tablep {
+	width: 80%;
+	margin: 50px auto;
+	color: white;
+}
+.label-primary{
+	cursor: pointer;
+}
+.wxtable-tbody-td {
+	text-align: center;
+	width: 10%;
+}
+
+.wxtable-thead-td {
+	text-align: center;
+	width: 10%;
+}
+
+/*
+ *  调整弹出窗口样式，大小，按钮，位置，背景颜色 
+ * */
+.defaultChoose {
+	margin: 10px;
+}
+
+.defaultItem {
+	display: inline-block;
+	margin: 5px;
+	padding: 5px 8px;
+	font-style: normal;
+}
+
+.btn-area {
+	margin: 10px auto;
+}
+
+.btn-area>.btn {
+	margin: 0 5px;
+}
+.wxtable-tbody-changeBox {
+	padding: 20px;
+	z-index: 9;
+	position: absolute;
+	top: -220px;
+	left: 50%;
+	margin-left: -200px;
+	width: 400px;
+	height: 210px;
+	display: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.btn-area svg {
+	vertical-align: -3px;
+}
+
+.wxtable-tbody-changeBox>input {
+	width: 100%;
+}
+
+.wxtable-tbody-td {
+	position: relative;
+}
+
+.triangle_border_down {
+	width: 0;
+	height: 0;
+	border-width: 15px 15px 0;
+	border-style: solid;
+	border-color: #333 transparent transparent;
+	margin: 35px auto;
+	position: relative;
+}
+
+/*表头背景颜色、字体颜色*/
+.wxtable-thead-tr{
+	background-color: rgb(242,246,247);
+	color: black;
+}
+
+/*表格奇数行变色*/
+.wxtable-tbody-tr:nth-of-type(odd){ 
+	background:rgb(255,102,102);
+}
+/*表格偶数行变色*/
+.wxtable-tbody-tr:nth-of-type(even){ 
+	background:rgb(51,153,204);
+}
+
+@media screen and (min-width: 400px) {
+    article:first-of-type {
+		color: #F9EBAE;
+    }
+	
+}
+article:first-of-type{
+	text-align: center;
+}
+footer:last-of-type #ip{
+	text-align: center;
+	font-size: 20px;
+}
+footer:last-of-type #temp{
+	text-align: center;
+	font-size: 18px;
+}
+footer:last-of-type #time{
+	text-align: center;
+}
+input[type='button']{
+	background-color: greenyellow;
+	border: 1px solid green;
+}
+#ip::before{
+	content: 'Your ip : ';
+	color: red;
+}
+#temp::after{
+	content: '';
+}
+#temp::before{
+	content: 'Your temp : ';
+	color: orange;
+}
+#temp::after{
+	content: ' Fahrenheit degree';
+	font-weight: 600;
+}
+#time::before{
+	content: 'Your time : ';
+	color: blue;
+}
+#time::after{
+	content: '';
+}
+#tp-weather-widget + article{
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+article + h1{
+	text-shadow: 0 0 3px black;
+}
+h1 + h2{
+	text-shadow: 0 0 3px black;
+}
+h2 + #tablep{
+	box-shadow: 0 0 10px black;
+}
+#tablep + footer{
+	font-weight: 600;
+}
+table tbody:not(:nth-of-type(2)) tr > td + td{
+	text-shadow: 0 0 5px black;
+}
+
+footer > div:nth-of-type(1){
+	text-shadow: 0 0 2px red;
+}
+footer > div:nth-of-type(1) + div{
+	text-shadow: 0 0 2px orange;
+}
+footer > div:nth-of-type(2) + div{
+	text-shadow: 0 0 2px blue;
+}
+#temp + input{
+	color: orange;
+}
+#time + input{
+	color: blue;
+}
+table tbody tr:first-of-type{
+	color: #3399CC;
+}
+table tbody tr:nth-of-type(2){
+	color: #FF6666;
+}
+table tbody tr:nth-of-type(3){
+	color: #3399CC;
+}
+table tbody tr:nth-of-type(4){
+	color: #FF6666;
+}
+table tbody tr:nth-of-type(5){
+	color: #3399CC;
+}
+table tbody tr:nth-of-type(6){
+	color: #FF6666;
+}
+table tbody tr:nth-of-type(7){
+	color: #3399CC;
+}
+table tbody tr:nth-of-type(8){
+	color: #FF6666;
+}
+table tbody tr:nth-of-type(9){
+	color: #3399CC;
+}
+table tbody tr:last-of-type{
+	color: #FF6666;
+}
