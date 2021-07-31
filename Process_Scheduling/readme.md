@@ -2,9 +2,7 @@
 
 ## How to run
 
-
 javac ProcessScheduling.java
-
 Java ProcessScheduling path to process_scheduling_input.txt{
 	//such as
 	java ProcessScheduling /Users/zhaoweigu/Downloads/src/process_scheduling_input.txt
