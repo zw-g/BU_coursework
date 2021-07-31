@@ -2,8 +2,8 @@
 
 ## How to run
 
-javac ProcessScheduling.java
 
+javac ProcessScheduling.java
 
 Java ProcessScheduling path to process_scheduling_input.txt{
 	//such as
