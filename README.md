@@ -6,7 +6,7 @@ MET CS622S	Adv Prog Tech
 
 MET CS673S	Software ENG - Password Manager PassMan
 
-MET CS665S	Sw Design & Pat
+MET CS665S	Sw Design & Pat - Thread Pool Design pattern
 
 # Spring 2021
 
