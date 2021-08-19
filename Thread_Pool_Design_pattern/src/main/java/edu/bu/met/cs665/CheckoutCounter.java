@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class CheckoutCounter {
 
-  private static final AtomicInteger ID_GENERATOR = new AtomicInteger();
+  private static final AtomicInteger idGenerator = new AtomicInteger();
   private final String shoppingListString;
   private final int id;
   private final int discountAppliesPercentage;
@@ -37,7 +37,7 @@ public class CheckoutCounter {
    */
   public CheckoutCounter(String shoppingListString, int discountAppliesPercentage,
       int discountPercentage) {
-    this.id = ID_GENERATOR.incrementAndGet();
+    this.id = idGenerator.incrementAndGet();
     this.shoppingListString = shoppingListString;
     this.discountAppliesPercentage = discountAppliesPercentage;
     this.discountPercentage = discountPercentage;

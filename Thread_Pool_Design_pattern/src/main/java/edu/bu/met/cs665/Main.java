@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Main {
 
-  static final int customerNumber = 1000;
+  static final int customerNumber = 10000;
   static final int minBuyAmount = 1;
   static final int maxBuyAmount = 50;
   static final int discountAppliesPercentage = 10;
