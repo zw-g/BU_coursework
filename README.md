@@ -1,5 +1,9 @@
 # BU Master in Software Development Coursework
 
+# Fall 2021
+
+MET CS664 Artificial Intelligence - TicTacT
+
 # Summer 2021
 
 MET CS622S	Adv Prog Tech
