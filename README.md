@@ -2,7 +2,7 @@
 
 # Fall 2021
 
-MET CS664 Artificial Intelligence - TicTacT
+MET CS664 Artificial Intelligence - TicTacToe
 
 # Summer 2021
 
