@@ -22,4 +22,4 @@ MET CS601	Web App Develop - Schedule Maker
 
 MET CS300	Intro Soft Dev
 
-MET CS521	Info Str Python - Sichuan Mahjong Game
+MET CS521	Info Str Python - [Sichuan Mahjong Game](https://github.com/zw-g/Sichuan_Mahjong_Game)
