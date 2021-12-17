@@ -2,7 +2,7 @@
 
 # Fall 2021
 
-MET CS664 Artificial Intelligence - [TicTacToe](https://github.com/zw-g/TIcTacToe),[wumpus](https://github.com/zw-g/wumpus),[rubiks_Cube_Solver](https://github.com/zw-g/rubiks_Cube_Solver)
+MET CS664 Artificial Intelligence - [TicTacToe](https://github.com/zw-g/TIcTacToe), [wumpus](https://github.com/zw-g/wumpus), [rubiks_Cube_Solver](https://github.com/zw-g/rubiks_Cube_Solver)
 
 # Summer 2021
 
