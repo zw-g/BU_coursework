@@ -1,7 +1,0 @@
-{% macro navigation(header, user) %}
-<h1>{{header}}</h1>
-<div class="hcontainer" style="justify-content: flex-end; padding-top: 0.5rem;">
-    <div>Logged in as <b>{{user.username}}</b> |</div>
-    <input class="logout-btn" type="button" value="Log out" onclick="location.href='/sessions/delete';"/>
-</div>
-{% endmacro %}

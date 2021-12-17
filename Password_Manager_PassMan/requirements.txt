@@ -1,6 +1,0 @@
-flask
-passlib[bcrypt]
-flask-unittest
-Flask-WTF
-cryptography
-coverage
